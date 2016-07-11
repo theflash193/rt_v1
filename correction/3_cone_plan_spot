@@ -1,0 +1,4 @@
+camera -20 0 0 0 0 0
+light -30 -50 40 255 255 255
+cone 0 0 0 1 255 255 0 0 0 0 default2
+plan 0 0 1 2 0 0 255 0 0 0 mirror

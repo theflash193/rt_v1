@@ -1,0 +1,6 @@
+camera -300 0 20 0 0 0
+light -280 0 150 255 255 255
+sphere 0 0 50 30 255 0 0 0 0 0 mirror
+sphere 0 80 50 30 255 0 0 0 0 0 metal
+sphere 0 -80 50 30 255 0 0 0 0 0 glass
+plan 0 0 1 0 222 0 20 0 0 0
