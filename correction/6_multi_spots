@@ -1,6 +1,6 @@
 camera -70 0 0 0 0 0
-light -100 100 20 255 255 255
-light -100 -100 20 255 255 255
+light -100 60 20 255 255 255
+light -100 -60 20 255 255 255
 plan 0 0 1 10 224 224 224 0 0 0 glass
 plan 1 0 0 30 0 0 160 0 0 0 glass
 plan 0 0 -1 20 115 155 155 0 0 0 glass
@@ -11,9 +11,9 @@ sphere -25 10 20 3 210 210 210 0 0 0 metal
 cylindre -25 -10 0 2 210 210 210 0 0 0 metal
 sphere -25 -10 -10 3 210 210 210 0 0 0 metal
 sphere -25 -10 20 3 210 210 210 0 0 0 metal
-cylindre -8 10 0 2 210 210 210 0 0 0 metal
-sphere -8 10 -10 3 210 210 210 0 0 0 metal
-sphere -8 10 20 3 210 210 210 0 0 0 metal
-cylindre -8 -10 0 2 210 210 210 0 0 0 metal
-sphere -8 -10 -10 3 210 210 210 0 0 0 metal
-sphere -8 -10 20 3 210 210 210 0 0 0 metal
+cylindre -8 6 0 2 210 210 210 0 0 0 metal
+sphere -8 6 -10 3 210 210 210 0 0 0 metal
+sphere -8 6 20 3 210 210 210 0 0 0 metal
+cylindre -8 -6 0 2 210 210 210 0 0 0 metal
+sphere -8 -6 -10 3 210 210 210 0 0 0 metal
+sphere -8 -6 20 3 210 210 210 0 0 0 metal

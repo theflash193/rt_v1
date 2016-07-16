@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:12:11 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/08 16:05:31 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/16 07:43:53 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,24 @@ t_vector3d	calcul_normal(t_obj *object, t_vector3d *inter)
 {
 	t_vector3d	n;
 	t_vector3d	tmp;
+	double		angle;
+
 
 	if (object->type == SPHERE)
 		n = sub_vector(object->origin, *inter);
 	if (object->type == PLAN)
 		n = object->origin;
-	if (object->type == CYLINDRE || object->type == CONE)
+	if (object->type == CYLINDRE)
 	{
-		tmp = new_vector(inter->x, inter->y, 0);
-		n = sub_vector(object->origin, tmp);
+		n = sub_vector(object->origin, *inter);
+		n.z = 0;
+		rotation(&n, object->angle);
+	}
+	if (object->type == CONE)
+	{
+		angle = pow(tan(object->size * M_PI / 180), 2);
+		n = sub_vector(object->origin, *inter);
+		n.z = n.z * -angle;
 		rotation(&n, object->angle);
 	}
 	n = normalize(n);
