@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/28 17:57:05 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/06/27 19:12:21 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/19 15:06:08 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	parser_material2(char *material, t_obj *object, t_env *e)
 	}
 	else if (ft_strequ_uci("default", material) || material == NULL)
 	{
-		object->material.shine = 0.8;
+		object->material.shine = 0.1;
 		object->material.ka = 0;
 		object->material.kd = 0.4;
 		object->material.ks = 0.3;

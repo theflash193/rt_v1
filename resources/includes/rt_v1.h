@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/10 06:21:56 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/16 03:32:37 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/19 14:52:30 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,8 @@ t_color					brightness(t_env *e, t_color color);
 t_color					assign_rgb(t_color new_color, t_env *e);
 double					vecdot(t_vector3d a, t_vector3d b);
 t_vector3d				normalize_obj(t_env *e);
-double					bright(double color, double cosa, t_obj *obj);
+double					bright(double color, double angle, t_obj *obj,
+	double light_color);
 double					shine(t_obj *object, double color, double norme);
 double					ambient_light(double color, t_obj obj);
 double					diffuse_light(t_vector3d a, t_vector3d b);

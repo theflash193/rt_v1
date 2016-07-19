@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 15:09:58 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/06/27 15:59:30 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/19 14:58:44 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ double		diffuse_light(t_vector3d a, t_vector3d b)
 		(pow(b.x, 2) + pow(b.y, 2) + pow(b.z, 2))));
 }
 
-double		bright(double color, double cosa, t_obj *object)
+double		bright(double color, double angle, t_obj *object,
+	double light_color)
 {
-	return (color * cosa * object->material.kd);
+	double new_color;
+	new_color = color * angle * object->material.kd;
+	return (new_color + object->material.shine * light_color * angle);
 }
 
 t_color		diffuse_color(t_obj *light, t_vector3d n, t_obj *object)
@@ -33,9 +36,9 @@ t_color		diffuse_color(t_obj *light, t_vector3d n, t_obj *object)
 	color = set_rgb(0, 0, 0);
 	if (angle >= 0)
 	{
-		color.r = bright(object->color.r, angle, object);
-		color.g = bright(object->color.g, angle, object);
-		color.b = bright(object->color.b, angle, object);
+		color.r = bright(object->color.r, angle, object, light->color.r);
+		color.g = bright(object->color.g, angle, object, light->color.g);
+		color.b = bright(object->color.b, angle, object, light->color.b);
 	}
 	return (color);
 }
