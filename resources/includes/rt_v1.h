@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/10 06:21:56 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/19 14:52:30 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/19 18:26:57 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,7 @@ typedef	struct			s_env
 	double				norme;
 	t_vector3d			dot_product;
 	int					nb_spots;
-	int					start_width;
-	int					start_lenght;
-	int					max_width;
-	int					max_lenght;
+	t_obj				*object_inter;
 }						t_env;
 
 /*
@@ -138,7 +135,7 @@ t_obj					*closest_obj_inter(t_env *e, t_vector3d start,
 	t_vector3d ray);
 t_color					shade(t_env *e, t_obj *object, t_vector3d *inter,
 	t_vector3d ray);
-int						shadow(t_env *e, t_vector3d inter);
+int						shadow(t_env *e, t_vector3d inter, t_obj *object);
 t_color					brightness(t_env *e, t_color color);
 
 t_color					assign_rgb(t_color new_color, t_env *e);
