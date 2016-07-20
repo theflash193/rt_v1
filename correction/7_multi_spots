@@ -1,7 +1,7 @@
 camera -70 0 0 0 0 0
 light -100 60 6 255 255 255
 light -100 -60 6 255 255 255
-plan 0 0 1 10 224 224 224 0 0 0 default2
+plan 0 0 1 10 224 224 224 0 0 0 glass
 plan -1 0 0 30 0 0 160 0 0 0 glass
 plan 0 0 -1 20 115 155 155 0 0 0 metal
 sphere -20 0 -3 2 255 0 0 0 0 0 metal
