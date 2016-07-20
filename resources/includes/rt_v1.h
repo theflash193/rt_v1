@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/10 06:21:56 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/19 18:26:57 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 10:25:34 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ double					resolve(double delta, double a, double b);
 double					inter(t_obj *obj, t_vector3d *start, t_vector3d *ray);
 t_obj					*closest_obj_inter(t_env *e, t_vector3d start,
 	t_vector3d ray);
-t_color					shade(t_env *e, t_obj *object, t_vector3d *inter,
+t_color					shade(t_env *e, t_obj object, t_vector3d inter,
 	t_vector3d ray);
 int						shadow(t_env *e, t_vector3d inter, t_obj *object);
 t_color					brightness(t_env *e, t_color color);

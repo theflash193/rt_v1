@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:12:11 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/19 18:34:50 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 10:29:18 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_vector3d	calcul_normal(t_obj *object, t_vector3d *inter)
 	t_vector3d	n;
 	t_vector3d	tmp;
 	double		angle;
-
 
 	if (object->type == SPHERE)
 		n = sub_vector(object->origin, *inter);
@@ -39,7 +38,18 @@ t_vector3d	calcul_normal(t_obj *object, t_vector3d *inter)
 	return (n);
 }
 
-t_color		shade(t_env *e, t_obj *object, t_vector3d *inter, t_vector3d ray)
+static void	light_rotate(t_env *e, t_obj *object, t_vector3d *inter,
+	t_obj *light)
+{
+	if (object->type == CYLINDRE && object->type == CONE)
+	{
+		rotation(&(light->l), e->object_inter->angle);
+		rotation(inter, e->object_inter->angle);
+		rotation(&(object->origin), e->object_inter->angle);
+	}
+}
+
+t_color		shade(t_env *e, t_obj object, t_vector3d inter, t_vector3d ray)
 {
 	t_color		final_color;
 	t_vector3d	n;
@@ -54,28 +64,16 @@ t_color		shade(t_env *e, t_obj *object, t_vector3d *inter, t_vector3d ray)
 	{
 		i++;
 		light = (t_obj *)cursor->content;
-		// rotation(&(obj.origin), e->obj.angle);
-		if (object->type == CYLINDRE)
-		{
-			rotation(&(light->l), e->object_inter->angle);
-			rotation(inter, e->object_inter->angle);
-			rotation(&(object->origin), e->object_inter->angle);
-		}
-		n = calcul_normal(object, inter);
-		final_color = add_rgb(final_color, diffuse_color(light, n, object));
+		light_rotate(e, &object, &inter, light);
+		n = calcul_normal(&object, &inter);
+		final_color = add_rgb(final_color, diffuse_color(light, n, &object));
 		final_color = add_rgb(final_color,
-			specular_color(light, n, object, ray));
+			specular_color(light, n, &object, ray));
 		cursor = cursor->next;
 	}
 	if (i > 0)
 		final_color = set_rgb(final_color.r / i,
 			final_color.g / i, final_color.b / i);
 	valid_rgb(&final_color);
-	if (object->type == CYLINDRE)
-	{
-		rotation_inverse(&(light->l), e->object_inter->angle);
-		rotation_inverse(inter, e->object_inter->angle);
-		rotation_inverse(&(object->origin), e->object_inter->angle);
-	}
 	return (final_color);
 }

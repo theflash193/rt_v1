@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/10 07:48:31 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/19 18:27:29 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 10:29:31 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_color				raytracer(t_env *e, t_vector3d start, t_vector3d ray)
 		inter = calcul_intersection(e->k, &start, &ray);
 		calcul_light_inter_ray(&inter, e->list_spot);
 		if (shadow(e, inter, object) != 1)
-			final_color = shade(e, object, &inter, ray);
+			final_color = shade(e, *object, inter, ray);
 		final_color = add_rgb(final_color, ambient_color(object));
 		valid_rgb(&final_color);
 	}

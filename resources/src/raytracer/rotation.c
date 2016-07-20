@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/19 15:30:03 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/19 16:29:32 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 10:35:05 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,45 +63,9 @@ static void	rotation_z(t_vector3d *a, double angle)
 	}
 }
 
-void		rotation_inverse(t_vector3d *a, t_vector3d angle)
-{
-	rotation_x(a, (-1) * angle.x);
-	rotation_y(a, (-1) * angle.y);
-	rotation_z(a, (-1) * angle.z);
-}
-
 void		rotation(t_vector3d *a, t_vector3d angle)
 {
 	rotation_x(a, angle.x);
 	rotation_y(a, angle.y);
 	rotation_z(a, angle.z);
 }
-
-// void	rotation(t_vector3d *vec, t_vector3d angle)
-// {
-// 	t_vector3d	tmp;
-// 	double		sinx;
-// 	double		siny;
-// 	double		sinz;
-
-// 	if (angle.x || angle.y || angle.z)
-// 	{
-// 		sinx = sin(angle.x);
-// 		siny = sin(angle.y);
-// 		sinz = sin(angle.z);
-// 		angle.x = cos(angle.x);
-// 		angle.y = cos(angle.y);
-// 		angle.z = cos(angle.z);
-// 		tmp.x = vec->x;
-// 		tmp.y = vec->y;
-// 		tmp.z = vec->z;
-// 		vec->x = tmp.x * angle.y * angle.z - tmp.y * angle.y * sinz + tmp.z * siny;
-// 		vec->y = tmp.x * (angle.x * sinz + sinx * siny * angle.z) + tmp.y *
-// 			(angle.x * angle.z - sinx * siny * sinz) - tmp.z * sinx *
-// 			angle.y;
-// 		vec->z = tmp.x * (sinx * sinz - angle.x * siny * angle.z) + tmp.y *
-// 			(sinx * angle.z + angle.x * siny * sinz) + tmp.z * angle.x *
-// 			angle.y;
-// 	}
-// 	// return (vec);
-// }

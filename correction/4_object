@@ -1,5 +1,5 @@
-camera -100 0 0 0 0 0
-light -500 -500 5 255 255 255
+camera -50 0 0 0 0 0
+light -500 -500 500 255 255 255
 plan 0 0 1 5 75 75 75 0 0 0 mirror
 plan -1 0 0 0 0 0 255 0 0 0 glass
 sphere -10 0 -3 5 255 0 0 0 0 0 glass
