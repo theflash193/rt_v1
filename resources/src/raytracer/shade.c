@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:12:11 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/20 10:29:18 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 11:28:55 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_vector3d	calcul_normal(t_obj *object, t_vector3d *inter)
 static void	light_rotate(t_env *e, t_obj *object, t_vector3d *inter,
 	t_obj *light)
 {
-	if (object->type == CYLINDRE && object->type == CONE)
+	if (object->type == CYLINDRE || object->type == CONE)
 	{
 		rotation(&(light->l), e->object_inter->angle);
 		rotation(inter, e->object_inter->angle);
