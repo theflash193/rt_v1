@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/10 06:21:56 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/07/20 10:25:34 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/20 11:14:23 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <math.h>
 # include <time.h>
 # include <fcntl.h>
+# include <sys/stat.h>
 # define LENGHT 720
 # define WIDTH 680
 # define CAMERA 1
