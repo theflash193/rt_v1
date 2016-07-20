@@ -1,7 +1,7 @@
-camera -30 0 0 0 0 -0.47
-light -200 100 100 255 255 255
+camera -50 0 10 0 0.25 -0.27
+light -200 500 100 255 255 255
 plan 0 0 1 5 75 75 75 0 0 0 mirror
-plan -1 0 0 0 0 0 255 0 0 0 metal
-sphere -4 0 -3 5 255 0 0 0 0 0 glass
-cone -4 -7 1 0 255 255 0 30 0 0 mirror
-cylindre -4 5 0 2 0 255 0 -40 0 0 mirror
+plan -1 0 0 0 0 0 255 0 0 0 glass
+sphere -10 0 -3 5 255 0 0 0 0 0 glass
+cone -10 -7 1 0 255 255 0 30 0 0 mirror
+cylindre -10 5 0 2 0 255 0 -40 0 0 mirror

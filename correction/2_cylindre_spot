@@ -1,3 +1,3 @@
-camera -260 0 0 0 0 0
-light -550 -50 50 255 255 255
-cylindre 0 0 0 20 0 255 30 -40 0 0 default2
+camera -60 0 0 0 0 0
+light -50 -50 0 255 255 255
+cylindre 0 0 0 20 0 255 16 0 0 0 default2
